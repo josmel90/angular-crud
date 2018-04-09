@@ -1,0 +1,31 @@
+<form  class="emp-form" #personaForm="ngForm" (ngSubmit)="onSubmit(personaForm)">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input type="text" class="form-control" name="idPersonal" #idPersonal="ngModel" [(ngModel)]="personaService.selectedPersona.idPersonal" placeholder="Id Personal"
+       required>
+      <div class="validation-error" *ngIf="idPersonal.invalid && idPersonal.touched">This Field is Required.</div>
+    </div> 
+    <div class="form-group col-md-6">
+      <input type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="personaService.selectedPersona.nombre" placeholder="Nombre" required>
+      <div class="validation-error" *ngIf="nombre.invalid && nombre.touched">This Field is Required.</div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input type="text" class="form-control" name="apepat" #apepat="ngModel" [(ngModel)]="personaService.selectedPersona.apepat" placeholder="Paterno" required>
+      <div class="validation-error" *ngIf="apepat.invalid && apepat.touched">This Field is Required.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <input type="text" class="form-control" name="apemat" #apemat="ngModel" [(ngModel)]="personaService.selectedPersona.apemat" placeholder="Materno" required>
+      <div class="validation-error" *ngIf="apemat.invalid && apemat.touched">This Field is Required.</div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <button type="submit" class="btn btn-lg btn-block btn-info"><i class="fa fa-floppy-o"></i> Guardar</button>
+    </div>
+    <div class="form-group col-md-4">
+      <button type="reset" class="btn btn-lg btn-block btn-secondary"><i class="fa fa-repeat"></i> Limpiar</button>
+    </div>
+  </div>
+</form>
